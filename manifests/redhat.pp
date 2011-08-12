@@ -1,7 +1,8 @@
 class ruby::redhat {
-  $packages = ['ruby', 'rubygems', 'ruby-irb', 'ruby-libs', 'ruby-rdoc']
+  $packages = ['ruby', 'rubygems', 'ruby-devel', 'ruby-irb', 'ruby-libs', 
+               'ruby-rdoc']
   
   package { $packages:
-    ensure => 'present',
+    ensure  => 'present', 
   }
 }
