@@ -5,7 +5,7 @@ class ruby {
   anchor { 'ruby::end': }
   
   case $::operatingsystem {
-    rhel,oel,fedora,centos: {
+    redhat,oel,fedora,centos: {
       class { 'ruby::redhat':
         require => Anchor['ruby::begin'],
         before  => Anchor['ruby::end'],
