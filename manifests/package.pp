@@ -1,8 +1,7 @@
-# Class: ruby::redhat
+# Class: ruby::package
 #
 # Description
 #   This class is designed to install latest Ruby and Rubygem packages
-#   on RHEL based systems. 
 #
 # Parameters:
 #   This class takes no parameters
@@ -16,11 +15,13 @@
 # Sample Usage:
 #   This method should not be called directly.
 #
-class ruby::redhat {
+class ruby::package {
   $packages = ['ruby', 'rubygems', 'ruby-devel', 'ruby-irb', 'ruby-libs', 
                'ruby-rdoc']
   
-  package { $packages:
-    ensure  => 'present', 
+  @package { $ruby::params::ry_packages:
+    ensure => 'present', 
+    tag    => 'ruby-packages', 
   }
+  Package<| tag == 'ruby-packages' |>
 }
