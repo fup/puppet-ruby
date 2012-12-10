@@ -15,9 +15,8 @@
 # Sample Usage:
 #   include ruby
 #
-class ruby {
+class ruby inherits ruby::params {
   include stdlib
-  include ruby::params
   
   anchor { 'ruby::begin': }
   -> class { 'ruby::package': }
